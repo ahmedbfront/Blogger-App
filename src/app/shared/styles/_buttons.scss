@@ -1,0 +1,38 @@
+.btng {
+  background-color: var(--bg-color);
+  position: relative;
+  color: white;
+  font-size: 14px;
+  font-family: var(--main-font);
+  padding: 10px 18px;
+  border-radius: 4px;
+  border: 0;
+  z-index: 1;
+  &:before {
+    content: "";
+    background: var(--main-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    z-index: -1;
+    border-radius: 4px 0 0 4px;
+    transition: all .5s;
+
+  }
+  &:hover {
+    &:before {
+      border-radius: 4px;
+      width: 100%;
+
+    }
+  }
+  &__icon {
+    margin-left: 4px;
+   }
+}
+
+button:focus {
+  outline: 0;
+}

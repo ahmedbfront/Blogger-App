@@ -1,0 +1,142 @@
+<footer class="fTop">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="popular">
+          <!-- Title Section -->
+          <div class="bTitle">
+            <h2 class="bTitle__title">
+              Mobile
+            </h2>
+          </div>
+          <!-- Title Section -->
+          <!-- Blog -->
+          <div class="blog d-flex" *ngFor="let post of mobile | slice: 0: 2">
+            <!-- Blog Image -->
+            <div class="blog__image" (click)='readPost(post?._id); pageTitle(post?.title)'>
+              <img class="blog__img" src="{{ post?.image }}">
+            </div>
+            <!-- Blog Image -->
+
+            <!-- Blog Info -->
+            <div class='blog__info'>
+              <!-- Blog Title -->
+              <h2 class="blog__title" (click)='readPost(post?._id); pageTitle(post?.title)'>
+                {{ post?.title }}
+              </h2>
+              <!-- Blog Title -->
+
+              <!-- Blog Meta -->
+              <div class="blog__meta">
+                <span class="blog__author">
+                  <i class="far fa-user"></i> 
+                  {{ post?.author }}
+                </span>
+                <span class="blog__date">
+                  <i class="far fa-calendar-alt"></i>
+                  {{ post?.date | date }}
+                </span>
+              </div>
+              <!-- Blog Meta -->
+            </div>
+            <!-- Blog Info -->
+          </div>
+          <!-- Blog -->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="popular">
+          <!-- Title Section -->
+          <div class="bTitle">
+            <h2 class="bTitle__title">
+              Business
+            </h2>
+          </div>
+          <!-- Title Section -->
+
+          <!-- Blog -->
+          <div class="blog d-flex" *ngFor="let post of business | slice: 0: 2">
+            <!-- Blog Image -->
+            <div class="blog__image" (click)='readPost(post?._id); pageTitle(post?.title)'>
+              <img class="blog__img" src="{{ post?.image }}">
+            </div>
+            <!-- Blog Image -->
+            
+            <!-- Blog Info -->
+            <div class='blog__info'>
+              <!-- Blog Title -->
+              <h2 class="blog__title" (click)='readPost(post?._id); pageTitle(post?.title)'>
+                {{ post?.title }}
+              </h2>
+              <!-- Blog Title -->
+
+              <!-- Blog Meta -->
+              <div class="blog__meta">
+                <span class="blog__author">
+                  <i class="far fa-user"></i> 
+                  {{ post?.author }}
+                </span>
+                <span class="blog__date">
+                  <i class="far fa-calendar-alt"></i>
+                  {{ post?.date | date }}
+                </span>
+              </div>
+              <!-- Blog Meta -->
+            </div>
+            <!-- Blog Info -->
+          </div>
+          <!-- Blog -->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="popular">
+          <!-- Title Section -->
+          <div class="bTitle">
+            <h2 class="bTitle__title">
+              Photography
+            </h2>
+          </div>
+          <!-- Title Section -->
+          
+          <!-- Blog -->
+          <div class="blog d-flex" *ngFor="let post of photography | slice: 3: 5">
+            <!-- Blog Image -->
+            <div class="blog__image" (click)='readPost(post?._id); pageTitle(post?.title)'>
+              <img class="blog__img" src="{{ post?.image }}">
+            </div>
+            <!-- Blog Image -->
+
+            <!-- Blog Info -->
+            <div class='blog__info'>
+              <!-- Blog Title -->
+              <h2 class="blog__title" (click)='readPost(post?._id); pageTitle(post?.title)'>
+                {{ post?.title }}
+              </h2>
+              <!-- Blog Title -->
+
+              <!-- Blog Meta -->
+              <div class="blog__meta">
+                <span class="blog__author">
+                  <i class="far fa-user"></i> 
+                  {{ post?.author }}
+                </span>
+                <span class="blog__date">
+                  <i class="far fa-calendar-alt"></i>
+                  {{ post?.date | date }}
+                </span>
+              </div>
+              <!-- Blog Meta -->
+            </div>
+            <!-- Blog Info -->
+          </div>
+          <!-- Blog -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Copyright -->
+<div class="fDown text-center">
+  Copyright © 2021 Blogger all rights reserved.
+</div>

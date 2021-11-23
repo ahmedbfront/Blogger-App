@@ -1,0 +1,17 @@
+.blog {
+  &__image {
+    max-width: 250px;
+  }
+  &__info {
+    margin-left: 20px;
+  }
+  .btng {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .blog__image {
+    max-width: 200px;
+  }
+}

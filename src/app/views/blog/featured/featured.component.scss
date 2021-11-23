@@ -1,0 +1,14 @@
+.blog {
+  &__image {
+    height: 360px;
+    margin-bottom: 10px;
+    &--btm {
+      height: 240px;
+    }
+  }
+  &__title {
+    &--btm {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+<section class="blogHeader">
+  <div class="row">
+    <div class="col-lg-8 col-md-6 plr-10" *ngFor='let post of allPosts | slice: 0:1'>
+      <!-- Blog -->
+      <div class="blog">
+        <!-- Blog Image -->
+        <div class="blog__image blog__image--left" (click)='readPost(post?._id, post?.title)'>
+          <img class="blog__img" src="{{ post?.image }}">
+        </div>
+        <!-- Blog Image -->
+
+        <!-- Blog Info -->
+        <div class='blog__info'>
+          <div class="blog__tag blog__tag--bg" (click)='categories(post?.tag, post?.tag)'>
+            <span>
+              {{ post?.tag }}
+            </span>
+          </div>
+
+          <!-- Blog Title -->
+          <h2 class="blog__title" (click)='readPost(post?._id, post?.title)'>
+            {{ post?.title }}
+          </h2>
+          <!-- Blog Title -->
+
+          <!-- Blog Meta -->
+          <div class="blog__meta">
+            <span class="blog__author">
+              <i class="far fa-user"></i> 
+              {{ post?.author }}
+            </span>
+            <span class="blog__date">
+              <i class="far fa-calendar-alt"></i>
+              {{ post?.date | date }}
+            </span>
+          </div>
+          <!-- Blog Meta -->
+        </div>
+        <!-- Blog Info -->
+      </div>
+      <!-- Blog -->
+    </div>
+    <div class="col-lg-4 col-md-6 plr-10">
+      <!-- Blog -->
+      <div class="blog" *ngFor='let post of allPosts | slice: 1:3'>
+        <!-- Blog Image -->
+        <div class="blog__image blog__image--right"
+        (click)='readPost(post?._id, post?.title)'>
+          <img class="blog__img" src="{{ post?.image }}">
+        </div>
+        <!-- Blog Image -->
+
+        <!-- Blog Info -->
+        <div class='blog__info'>
+          <div class="blog__tag blog__tag--bg" (click)='categories(post?.tag, post?.tag)'>
+            <span>
+              {{ post?.tag }}
+            </span>
+          </div>
+
+          <!-- Blog Title -->
+          <h2 class="blog__title" (click)='readPost(post?._id, post?.title)'>
+            {{ post?.title }}
+          </h2>
+          <!-- Blog Title -->
+
+          <!-- Blog Meta -->
+          <div class="blog__meta">
+            <span class="blog__author">
+              <i class="far fa-user"></i> 
+              {{ post?.author }}
+            </span>
+            <span class="blog__date">
+              <i class="far fa-calendar-alt"></i>
+              {{ post?.date | date }}
+            </span>
+          </div>
+          <!-- Blog Meta -->
+        </div>
+        <!-- Blog Info -->
+      </div>
+      <!-- Blog -->
+    </div>
+    <div class="col-lg-4 col-md-6 plr-10" *ngFor='let post of allPosts | slice: 3:6'>
+      <!-- Blog -->
+      <div class="blog">
+        <!-- Blog Image -->
+        <div class="blog__image" (click)='readPost(post?._id, post?.title)'>
+          <img class="blog__img" src="{{ post?.image }}">
+        </div>
+        <!-- Blog Image -->
+
+        <!-- Blog Info -->
+        <div class='blog__info'>
+          <div class="blog__tag blog__tag--bg" (click)='categories(post?.tag, post?.tag)'>
+            <span>
+              {{ post?.tag }}
+            </span>
+          </div>
+
+          <!-- Blog Title -->
+          <h2 class="blog__title" (click)='readPost(post?._id, post?.title)'>
+            {{ post?.title }}
+          </h2>
+          <!-- Blog Title -->
+
+          <!-- Blog Meta -->
+          <div class="blog__meta">
+            <span class="blog__author">
+              <i class="far fa-user"></i> 
+              {{ post?.author }}
+            </span>
+            <span class="blog__date">
+              <i class="far fa-calendar-alt"></i>
+              {{ post?.date | date }}
+            </span>
+          </div>
+          <!-- Blog Meta -->
+        </div>
+        <!-- Blog Info -->
+      </div>
+      <!-- Blog -->
+    </div>
+  </div>
+</section>

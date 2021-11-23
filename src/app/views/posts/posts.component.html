@@ -1,0 +1,129 @@
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="article">
+          <div class="article__info">
+            <!-- Title Article -->
+            <h2 class="article__title">
+              {{ article?.title }}
+            </h2>
+            <!-- Title Article -->
+
+            <!-- Article Meta -->
+            <div class="article__meta">
+              <span class="article__author">
+                <i class="far fa-user"></i>
+                {{ article?.author }}
+              </span>
+              <span class="article__date">
+                <i class="far fa-calendar-alt"></i>
+                {{ article?.date | date
+                }}
+              </span>
+              <span class="article__tag"
+                (click)='categories(article?.tag, article?.title)'>
+                <i class="far fa-folder"></i>
+                {{ article?.tag | titlecase }}
+              </span>
+            </div>
+            <!-- Article Meta -->
+          </div>
+          <hr>
+          <!-- Article Content -->
+          <div class="article__post">
+            <div [innerHtml]='article?.content'>
+            </div>
+          </div>
+          <!-- Article Content -->
+
+          <!-- Share the Post -->
+          <div class="share">
+            <div class="bTitle">
+              <h2 class="bTitle__title">
+                <span>
+                  Share the post
+                </span>
+              </h2>
+            </div>
+            <div class="sharethis-inline-share-buttons"></div>
+          </div>
+          <!-- Share the Post -->
+        </div>
+
+        <!-- Related Posts -->
+        <div class="posts">
+          <!-- Title Section -->
+          <div class="bTitle">
+            <h2 class="bTitle__title">
+              Related Posts
+            </h2>
+          </div>
+          <!-- Title Section -->
+
+          <div class="row">
+            <div class="col-md-4"
+              *ngFor='let post of relatedPosts |
+             slice: 0: 3'>
+              <div class="blog">
+                <div
+                  class="blog__image blog__image--btm"
+                  (click)='readPost(post?._id, post?.title)'>
+                  <img class="blog__img"
+                    src="{{ post?.image }}">
+                </div>
+                <div class='blog__info'>
+                  <h2
+                    class="blog__title"
+                    (click)='readPost(post?._id, post?.title)'>
+                    {{ post?.title }}
+                  </h2>
+                  <div
+                    class="blog__meta">
+                    <span
+                      class="blog__author">
+                      <i
+                        class="far fa-user"></i>
+                      {{ post?.author }}
+                    </span>
+                    <span
+                      class="blog__date">
+                      <i
+                        class="far fa-calendar-alt"></i>
+                      {{ post?.date |
+                      date }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Related Posts -->
+
+        <!-- Comment -->
+        <div class="comment">
+          <app-comment (newComment)="submitted($event)"></app-comment>
+          <div class="comment__body" *ngFor='let comment of comments'>
+            <div class="comment__item d-flex align-items-center">
+              <div class="comment__user d-flex justify-content-center align-items-center">
+                <i class="far fa-user"></i>
+              </div>
+              <h4 class="comment__name m-0">
+                {{ comment?.name }}
+              </h4>
+            </div>
+            <h6 class="comment__comment">
+              {{ comment?.comment }}
+            </h6>
+          </div>
+        </div>
+        <!-- Comment -->
+
+      </div>
+      <div class="col-lg-4">
+        <app-aside></app-aside>
+      </div>
+    </div>
+  </div>
+</article>

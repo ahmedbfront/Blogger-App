@@ -1,0 +1,31 @@
+.blog {
+  &__image {
+    &--left {
+      margin-bottom: 20px;
+    }
+    &--recent {
+      width: 200px;
+      height: 120px;
+    }
+  }
+  
+  &__img--recent {
+    object-fit: cover;
+    object-position: top;
+  }
+  &__info {
+    width: 90%;
+    margin-left: 12px;
+  }
+  &__title {
+    font-size: 20px;
+    &--left {
+      font-size: 30px;
+    }
+  }
+}
+
+.plr-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}

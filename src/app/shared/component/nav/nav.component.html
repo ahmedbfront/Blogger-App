@@ -1,0 +1,122 @@
+<!-- Top Navbar -->
+<div class="topnav">
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <ul class="list-unstyled d-flex">
+        <li>
+          <a class="topnav__link" routerLink='' (click)="pageTitle('Home')">
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="topnav__link" routerLink='page/about' (click)="pageTitle('About')">
+            About 
+          </a>
+        </li>
+        <li>
+          <a class="topnav__link" routerLink='page/contact' (click)="pageTitle('Contact')">
+            Contact
+          </a>
+        </li>
+      </ul>
+      <ul class="list-unstyled d-flex">
+        <li>
+          <a class="topnav__link" href="#" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li>
+          <a class="topnav__link" href="#" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a class="topnav__link" href="#" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a class="topnav__link" href="#" target="_blank">
+            <i class="fab fa-google-plus-g"></i>
+          </a>
+        </li>
+        <li>
+          <a class="topnav__link" href="#" target="_blank">
+            <i class="fab fa-behance"></i>
+          </a>
+        </li>
+        <li>
+          <a class="topnav__link" href="#" target="_blank">
+            <i class="fab fa-pinterest"></i>
+          </a>
+        </li>
+        <li class="topnavbar__item m-0">
+          <a class="topnav__link" href="#" target="_blank">
+            <i class="fab fa-dribbble"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Top Navbar -->
+
+<!-- Header -->
+<div class="header">
+  <div class="container">
+    <div class="header__item d-flex justify-content-between align-items-center">
+      <!-- Logo -->
+      <h2 class="header__logo">
+        Blogger
+      </h2>
+      <!-- ADS -->
+      <div class="ads d-flex justify-content-center align-items-center">
+        <h4 class="ads__item">
+          Responsive Advertisement
+        </h4>
+      </div>
+      <!-- ADS -->
+    </div>
+  </div>
+</div>
+<!-- Header -->
+
+<nav class="navbar navbar-expand-lg" [class.position-fixed]='pageYoffset > 194'>
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar__logo d-none" >Blogger</a>
+    <button class="navbar-toggler" (click)='openedNav()'>
+      <span class="navbar__icon" [class.toggle__icon--opened]='openNav'></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [class.d-block]='openNav'>
+      <ul class="navbar-nav mr-auto">
+        <li class="navbar__item">
+          <a class="navbar__link navbar__link--active" routerLink='' routerLinkActive="navbar__link--active" [routerLinkActiveOptions]='{exact: true}'
+          (click)="closeNav('Home')">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" routerLink='categories/technology' routerLinkActive="navbar__link--active"
+          (click)="closeNav('Technology')">Technology</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" routerLink='categories/photography' routerLinkActive="navbar__link--active"
+          (click)="closeNav('Photography')">Photography</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" routerLink='categories/business' routerLinkActive="navbar__link--active"
+          (click)="closeNav('Business')">Business</a>
+        </li>
+      </ul>
+
+      <!-- Search Form -->
+      <form class="navform" [formGroup]="search" (ngSubmit)="searchPost()">
+        <div class="navform__group">
+          <input class="navform__input" type="text" placeholder="search here..." name="title" formControlName='title'>
+        </div>
+      </form>
+      <!-- Search Form -->
+
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,16 @@
+<div class="tags">
+  <!-- Title Section -->
+  <div class="bTitle">
+    <h2 class="bTitle__title">
+      Categories
+    </h2>
+  </div>
+  <!-- Title Section -->
+
+  <ul class="list-unstyled d-flex flex-wrap">
+    <li class="tags__item" *ngFor='let tag of tags'
+    (click)='categories(tag?.tag); pageTitle(tag?.tag)'>
+      {{ tag?.tag | titlecase}}
+    </li>
+  </ul>
+</div>

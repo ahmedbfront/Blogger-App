@@ -1,0 +1,15 @@
+.blog {
+  &__image {
+    max-width: 100px;
+  }
+  &__info {
+    margin-left: 20px;
+  }
+  &__tag {
+    margin-bottom: 6px;
+  }
+  &__title {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+}

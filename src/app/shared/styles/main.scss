@@ -1,0 +1,13 @@
+:root {
+  // Variable Color 
+  --main-color: #0088ff;
+  --bg-color: #2c2d30;
+
+  // Variable Font 
+  --main-font: "Poppins", sans-serif;
+  --text-font: "Muli", sans-serif;
+}
+
+@import "./buttons";
+@import "./global";
+

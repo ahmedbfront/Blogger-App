@@ -1,0 +1,35 @@
+.fTop {
+  background-color: #202020;
+  padding: 30px 0 20px;
+}
+
+.fDown {
+  background-color: black;
+  padding: 10px 0;
+  color: #8f8f8f;
+}
+
+.bTitle {
+  &__title {
+    background-color: #202020;
+    color: #f2f2f2d4;
+  }
+  &:after {
+    border-color: #f2f2f2d4;
+  }
+}
+
+.blog {
+  &__image {
+    min-width: 80px;
+    max-width: 80px;
+    height: 70px;
+  }
+  &__info {
+    margin-left: 10px;
+  }
+  &__title {
+    color: #f2f2f2d4;
+    font-size: 14px;
+  }
+}

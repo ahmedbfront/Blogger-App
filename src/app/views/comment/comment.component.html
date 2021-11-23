@@ -1,0 +1,59 @@
+<section>
+  <!-- Title Section -->
+  <div class="bTitle">
+    <h2 class="bTitle__title">
+      <span>
+        Post a Comment
+      </span>
+    </h2>
+  </div>
+  <!-- Title Section -->
+
+  <!-- Start Form -->
+  <form class="form" [formGroup]="fGroup" (ngSubmit)="onSubmit()">
+
+    <!-- Form Item -->
+    <div class="form__body">
+      <div class="form__item">
+        <input class="form__input" type="text" name="name" formControlName='name' required>
+        <div class="form__line"></div>
+        <label class="form__label" for="">
+          <i class="form__icon far fa-user"></i>
+          Your Name
+        </label>
+      </div>
+  
+      <!-- Form Validators -->
+      <div class="form__invlid" *ngIf='f.name.invalid && f.name.touched'>
+        <div class="text-danger">
+          Name is required.
+        </div>
+      </div>
+    </div>
+  
+    <!-- Form Item -->
+    <div class="form__body">
+      <div class="form__item">
+        <input class="form__input" type="text" name="comment" formControlName='comment' required>
+        <div class="form__line"></div>
+        <label class="form__label" for="">
+          <i class="form__icon far fa-user"></i>
+          Write your Comment 
+        </label>
+      </div>
+  
+      <!-- Form Validators -->
+      <div class="form__invlid" *ngIf='f.comment.invalid && f.comment.touched'>
+        <div class="text-danger">
+          Comment is required.
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Submit -->
+    <button class="btng" type="submit" [formNoValidate]="f.comment.errors.required">Publish</button>
+    <!-- Form Submit -->
+
+  </form>
+  <!-- End Form -->
+</section>

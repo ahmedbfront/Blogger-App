@@ -1,0 +1,38 @@
+.blog {
+  &--down {
+    display: flex;
+  }
+  &__image {
+    height: 360px;
+    &--btn {
+      margin-bottom: 10px;
+    }
+    &--btm {
+      height: 240px;
+    }
+    &--down {
+      min-width: 230px;
+      max-width: 230px;
+      height: 200px;
+    }
+  }
+  &__info--down {
+    margin-left: 20px;
+  }
+  &__title {
+    &--down {
+      font-size: 20px;
+    }
+  }
+  .btng {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .blog__image {
+    min-width: 200px;
+    max-width: 200px;
+    height: 180px;
+  }
+}

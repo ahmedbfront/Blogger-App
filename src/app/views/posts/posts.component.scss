@@ -1,0 +1,73 @@
+article {
+  padding: 40px 0;
+  
+}
+
+.article {
+  overflow: hidden;
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  &__meta {
+    color: #8f8f8f;
+    font-size: 12px;
+  }
+  &__date {
+    margin-left: 10px;
+  }
+  &__tag {
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all .2s;
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+  &__image {
+    margin-bottom: 40px;
+  }
+  
+}
+
+.share,
+.posts {
+  padding: 40px 0 20px;
+}
+
+.blog {
+  &__image {
+    height: 200px;
+    margin-bottom: 10px;
+  }
+}
+
+.comment {
+  &__body {
+    padding: 20px 0px;
+    border-bottom: 2px solid #eee;
+    &:last-child {
+      padding-bottom: 0;
+      border: none
+    }
+  }
+  &__item {
+    margin-bottom: 15px;
+  }
+  &__user {
+    background-color: var(--bg-color);
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  &__name {
+    color: var(--main-color);
+  }
+  &__comment {
+    margin-left: 6px;
+  }
+}

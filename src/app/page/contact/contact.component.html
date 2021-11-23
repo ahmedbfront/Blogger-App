@@ -1,0 +1,134 @@
+<section class='contact'>
+  <div class="container">
+    <!-- Title Section -->
+    <div class="bTitle">
+      <h2 class="bTitle__title">
+        Contact Us
+      </h2>
+    </div>
+    <!-- Title Section -->
+
+    <!-- Start Form Contact -->
+    <form class="form" [formGroup]='fGroup' 
+    (ngSubmit)='sendMsg()'>
+      <div class="row">
+        <!-- Start Item -->
+        <div class="col-md-6 form-group">
+          <div class="form__body">
+            <div class="form__item">
+              <input class="form__input" type="text" name="name" formControlName='name' required>
+              <div class="form__line"></div>
+              <label class="form__label" for="">
+                <i class="form__icon far fa-user"></i>
+                Your Name
+              </label>
+            </div>
+        
+            <!-- Form Validators -->
+            <div class="form__invlid" *ngIf='f.name.invalid && f.name.touched'>
+              <div class="text-danger">
+                Name is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Form Validators -->
+
+        <!-- Start Item -->
+        <div class="col-md-6 form-group">
+          <div class="form__body">
+            <div class="form__item">
+              <input class="form__input" type="text" name="email" formControlName='email' required>
+              <div class="form__line"></div>
+              <label class="form__label" for="">
+                <i class="form__icon far fa-envelope"></i>
+                Your Email
+              </label>
+            </div>
+  
+            <!-- Form Validators -->
+            <div class="form__invlid" *ngIf='f.email.invalid && 
+            (f.email.dirty || f.email.touched)'>
+              <div class="text-danger" *ngIf="f.email.errors.required">
+                Email is required.
+              </div>
+              <div class="text-danger" *ngIf="f.email.errors.email && f.email.touched">
+                Your Input Don't match Email format.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Form Validators -->
+
+        <!-- Start Item -->
+        <div class="col-md-12 form-group">
+          <div class="form__item">
+            <input class="form__input" type="text" name="subject" formControlName='subject' required>
+            <div class="form__line"></div>
+            <label class="form__label" for="">
+              <i class="form__icon fas fa-question"></i>
+              Your Subject
+            </label>
+          </div>
+
+          <!-- Form Validators -->
+          <div class="form__invlid" *ngIf='f.subject.invalid && 
+            (f.subject.dirty || f.subject.touched)'>
+            <div class="text-danger" *ngIf="f.subject.errors.required">
+              The subject is required.
+            </div>
+          </div>
+        </div>
+        <!-- Form Validators -->
+
+        <!-- Start Item -->
+        <div class="col-xl-12 form-group">
+            <div class="form__item">
+              <input class="form__input" type="text" name="message" required 
+                formControlName='message'>
+              <div class="form__line"></div>
+              <label class="form__label" for="">
+                <i class="form__icon far fa-comments"></i>
+                Your Message
+              </label>
+            </div>
+
+          <!-- Form Validators -->
+          <div class="form__invlid" *ngIf='f.message.invalid && 
+            (f.message.dirty || f.message.touched)'>
+            <div class="text-danger" *ngIf="f.message.errors.required">
+              The message is required.
+            </div>
+          </div>
+        </div>
+        <!-- Form Validators -->
+
+        <!-- Form Submit -->
+        <button class="btng" type="submit">
+          Send Your Message
+        </button>
+        <!-- Form Submit -->
+
+      </div>
+    </form>
+    <!-- End Form Contact -->
+
+    <!-- Successfully Message  -->
+    <div class="success success--bgs position-fixed text-white" 
+      *ngIf='successfulMsg'>
+      <h5 class="success__msg">
+        <i class="success__icon fas fa-check-circle"></i>
+        {{ sentSuccessfully }}
+      </h5>
+    </div>
+
+    <!-- Error Message  -->
+    <div class="success success--bge position-fixed text-white" *ngIf='successfulErr'>
+      <h5 class="success__msg">
+        <i class="success__icon fas fa-exclamation-triangle"></i>
+        {{ sendErr }}
+      </h5>
+    </div>
+    
+  </div>
+</section>

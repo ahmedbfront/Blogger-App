@@ -1,0 +1,50 @@
+<section>
+  <!-- Title Section -->
+  <div class="bTitle">
+    <h2 class="bTitle__title">
+      Business
+    </h2>
+  </div>
+  <!-- Title Section -->
+
+  <div class="wrapper">
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let post of allPosts">
+        <ng-template carouselSlide [id]="post?._id">
+          <!-- Blog -->
+          <div class="blog">
+            <!-- Blog Image -->
+            <div class="blog__image" (click)='readPost(post?._id, post?.title)'>
+              <img class="blog__img" src="{{ post?.image }}">
+            </div>
+            <!-- Blog Image -->
+
+            <!-- Blog Info -->
+            <div class='blog__info'>
+              <!-- Blog Title -->
+              <h2 class="blog__title" (click)='readPost(post?._id, post?.title)'>
+                {{ post?.title }}
+              </h2>
+              <!-- Blog Title -->
+
+              <!-- Blog Meta -->
+              <div class="blog__meta">
+                <span class="blog__author">
+                  <i class="far fa-user"></i> 
+                  {{ post?.author }}
+                </span>
+                <span class="blog__date">
+                  <i class="far fa-calendar-alt"></i>
+                  {{ post?.date | date }}
+                </span>
+              </div>
+              <!-- Blog Meta -->
+            </div>
+            <!-- Blog Info -->
+          </div>
+          <!-- Blog -->
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</section>

@@ -1,0 +1,79 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <!-- Title Section -->
+        <div class="bTitle">
+          <h2 class="bTitle__title">
+            <span>Research Results</span>
+          </h2>
+        </div>
+        <!-- Title Section -->
+
+        <!-- Blog -->
+        <div class="blog d-flex" *ngFor="let post of allPosts | slice: (page - 1) * pageSize:page * pageSize">
+          <!-- Blog Image -->
+          <div class="blog__image" (click)='readPost(post?._id, post?.title)'>
+            <img class="blog__img" src="{{ post?.image }}">
+          </div>
+          <!-- Blog Image -->
+
+          <!-- Blog Info -->
+          <div class='blog__info'>
+            <div class="blog__tag" (click)='categories(post?.tag, post?.tag)'>
+              <span>
+                {{ post?.tag }}
+              </span>
+            </div>
+            <!-- Blog Title -->
+            <h2 class="blog__title" (click)='readPost(post?._id, post?.title)'>
+              {{ post?.title }}
+            </h2>
+            <!-- Blog Title -->
+
+            <!-- Blog Meta -->
+            <div class="blog__meta">
+              <span class="blog__author">
+                <i class="far fa-user"></i> 
+                {{ post?.author }}
+              </span>
+              <span class="blog__date">
+                <i class="far fa-calendar-alt"></i>
+                {{ post?.date | date }}
+              </span>
+            </div>
+            <!-- Blog Meta -->
+
+            <!-- Blog Button -->
+            <button class="btng" (click)="readPost(post?._id, post?.title)">
+              Read more
+            </button>
+            <!-- Blog Button -->
+          </div>
+          <!-- Blog Info -->
+        </div>
+        <!-- Blog -->
+
+        <!-- Blog Pagination -->
+        <ngb-pagination *ngIf='allPosts?.length >= 9'
+          [(page)]="page"
+          [pageSize]="pageSize"
+          [collectionSize]="allPosts?.length">
+        </ngb-pagination>
+        <!-- Blog Pagination -->
+
+        <!-- Blog No Results -->
+        <div class="results" *ngIf='allPosts?.length <= 0'>
+          <h4 class="p-2">
+            No Results Found
+          </h4>
+        </div>
+        <!-- Blog No Results -->
+
+      </div>
+      <div class="col-md-4">
+        <app-aside></app-aside>
+      </div>
+    </div>
+  </div>
+</section>
